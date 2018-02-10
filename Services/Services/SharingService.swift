@@ -20,7 +20,7 @@ extension ServiceRegistry {
 }
 
 protocol Sharable {
-	var url : URL { get }
+	var content : Any { get }
 }
 
 protocol SharingService : Service {
@@ -28,12 +28,8 @@ protocol SharingService : Service {
 }
 
 extension SharingService {
-	internal func instance() -> Service {
-		return SharingServiceImplementation()
-	}
-
-	internal func share(_ content : Sharable, withActivityItems activityItems : [Any], presentingController : UIViewController) {
-		showActivityViewController(with: [activityItems, content.url], presentingController: presentingController)
+	internal func share(_ sharable : Sharable, withActivityItems activityItems : [Any], presentingController : UIViewController) {
+		showActivityViewController(with: [sharable.content] + activityItems, presentingController: presentingController)
 	}
 
 	private func showActivityViewController(with activityItems: [Any], presentingController : UIViewController) {
@@ -64,6 +60,9 @@ internal struct SharingServiceImplementation : SharingService {
 	static func register() {
 		ServiceRegistry().addService(SharingServiceImplementation(), withName: "SharingService")
 	}
+	
+	private init() {
+	}
 }
 
 // Example test implementation
@@ -72,7 +71,6 @@ internal struct TestSharingServiceImplementation : SharingService {
 		ServiceRegistry().addService(TestSharingServiceImplementation(), withName: "SharingService")
 	}
 
-	func instance() -> Service {
-		return TestSharingServiceImplementation()
+	private init() {
 	}
 }

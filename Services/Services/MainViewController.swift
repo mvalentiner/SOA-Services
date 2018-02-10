@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Services
 //
 //  Created by Michael Valentiner on 1/6/18.
@@ -8,18 +8,31 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+struct SharableText : Sharable {
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+    let text : String
+
+	init(_ textToShare : String) {
+		text = textToShare
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	var content : Any {
+		get { return text }
 	}
-
-
 }
 
+class MainViewController: UIViewController {
+
+	@IBOutlet weak var textField: UITextField!
+	@IBOutlet weak var shareTextButton: UIButton!
+
+	@IBAction func handleShareTextButtonTap(_ sender: Any) {
+		guard let textToShare = textField.text else {
+			return
+		}
+
+		let sharingService = ServiceRegistry().getSharingService()
+		let sharableText = SharableText(textToShare)
+		sharingService.share(sharableText, withActivityItems: [], presentingController: self)
+	}
+}

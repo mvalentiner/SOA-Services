@@ -12,7 +12,7 @@ struct ServiceRegistry {
 	private static var serviceDictionary : [String : Service] = [:]
 	
 	internal func addService(_ service : Service, withName name: String) {
-		ServiceRegistry.serviceDictionary[name] = service.resolve()
+		ServiceRegistry.serviceDictionary[name] = service
 	}
 	
 	internal func getService(withName name: String) -> Service? {

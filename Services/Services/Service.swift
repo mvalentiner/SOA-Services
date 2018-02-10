@@ -9,11 +9,5 @@
 import Foundation
 
 protocol Service {
-	func instance() -> Service
 }
 
-extension Service {
-	func instance() -> Service {
-		return self
-	}
-}
