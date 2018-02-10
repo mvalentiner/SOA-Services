@@ -8,6 +8,9 @@
 
 import Foundation
 
+protocol Service {
+}
+
 struct ServiceRegistry {
 	private static var serviceDictionary : [String : Service] = [:]
 	

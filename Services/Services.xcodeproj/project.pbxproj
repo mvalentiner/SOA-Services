@@ -13,7 +13,6 @@
 		27E9AAF92029C5540004C6C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E9AAF82029C5540004C6C6 /* Assets.xcassets */; };
 		27E9AAFC2029C5540004C6C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E9AAFA2029C5540004C6C6 /* LaunchScreen.storyboard */; };
 		27E9AB072029C5540004C6C6 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB062029C5540004C6C6 /* ServicesTests.swift */; };
-		27E9AB122029C6760004C6C6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB112029C6760004C6C6 /* Service.swift */; };
 		27E9AB142029C6A80004C6C6 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB132029C6A80004C6C6 /* ServiceRegistry.swift */; };
 		27E9AB162029C7270004C6C6 /* SharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB152029C7270004C6C6 /* SharingService.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		27E9AB022029C5540004C6C6 /* ServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServicesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E9AB062029C5540004C6C6 /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 		27E9AB082029C5540004C6C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27E9AB112029C6760004C6C6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		27E9AB132029C6A80004C6C6 /* ServiceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistry.swift; sourceTree = "<group>"; };
 		27E9AB152029C7270004C6C6 /* SharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +83,6 @@
 			children = (
 				27E9AAF12029C5540004C6C6 /* AppDelegate.swift */,
 				27E9AAF32029C5540004C6C6 /* MainViewController.swift */,
-				27E9AB112029C6760004C6C6 /* Service.swift */,
 				27E9AB132029C6A80004C6C6 /* ServiceRegistry.swift */,
 				27E9AB152029C7270004C6C6 /* SharingService.swift */,
 				27E9AAF52029C5540004C6C6 /* Main.storyboard */,
@@ -211,7 +208,6 @@
 				27E9AAF42029C5540004C6C6 /* MainViewController.swift in Sources */,
 				27E9AAF22029C5540004C6C6 /* AppDelegate.swift in Sources */,
 				27E9AB142029C6A80004C6C6 /* ServiceRegistry.swift in Sources */,
-				27E9AB122029C6760004C6C6 /* Service.swift in Sources */,
 				27E9AB162029C7270004C6C6 /* SharingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
