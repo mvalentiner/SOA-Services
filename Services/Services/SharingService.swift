@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
+private let sharingServiceName = "SharingService"
+
 extension ServiceRegistry {
 	func getSharingService() -> SharingService {
-		let serviceName = "SharingService"
-		guard let resolvedService = ServiceRegistry().getService(withName: serviceName) as? SharingService else {
-			fatalError("Programmer error: Service \(serviceName) is not registered with the ServiceRegistry.")
+		guard let resolvedService = ServiceRegistry().getService(withName: sharingServiceName) as? SharingService else {
+			fatalError("Programmer error: Service \(sharingServiceName) is not registered with the ServiceRegistry.")
 		}
 		return resolvedService
 	}
@@ -56,9 +57,10 @@ extension SharingService {
     }
 }
 
+// Production implementation
 internal struct SharingServiceImplementation : SharingService {
 	static func register() {
-		ServiceRegistry().addService(SharingServiceImplementation(), withName: "SharingService")
+		ServiceRegistry().addService(self.init(), withName: sharingServiceName)
 	}
 	
 	private init() {
@@ -68,7 +70,7 @@ internal struct SharingServiceImplementation : SharingService {
 // Example test implementation
 internal struct TestSharingServiceImplementation : SharingService {
 	static func register() {
-		ServiceRegistry().addService(TestSharingServiceImplementation(), withName: "SharingService")
+		ServiceRegistry().addService(self.init(), withName: sharingServiceName)
 	}
 
 	private init() {
