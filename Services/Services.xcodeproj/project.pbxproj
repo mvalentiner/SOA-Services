@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2724D15920407EA80079A7E8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2724D15820407EA80079A7E8 /* README.md */; };
 		27E9AAF22029C5540004C6C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AAF12029C5540004C6C6 /* AppDelegate.swift */; };
 		27E9AAF42029C5540004C6C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AAF32029C5540004C6C6 /* MainViewController.swift */; };
 		27E9AAF72029C5540004C6C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E9AAF52029C5540004C6C6 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2724D15820407EA80079A7E8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Services/README.md; sourceTree = SOURCE_ROOT; };
 		27E9AAEE2029C5540004C6C6 /* Services.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Services.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E9AAF12029C5540004C6C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E9AAF32029C5540004C6C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				27E9AAF82029C5540004C6C6 /* Assets.xcassets */,
 				27E9AAFA2029C5540004C6C6 /* LaunchScreen.storyboard */,
 				27E9AAFD2029C5540004C6C6 /* Info.plist */,
+				2724D15820407EA80079A7E8 /* README.md */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				27E9AAFC2029C5540004C6C6 /* LaunchScreen.storyboard in Resources */,
 				27E9AAF92029C5540004C6C6 /* Assets.xcassets in Resources */,
+				2724D15920407EA80079A7E8 /* README.md in Resources */,
 				27E9AAF72029C5540004C6C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
