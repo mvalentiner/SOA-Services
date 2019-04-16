@@ -12,11 +12,10 @@ import UIKit
 private let sharingServiceName = "SharingService"
 
 extension ServiceRegistry {
-	func getSharingService() -> SharingService {
-		guard let resolvedService = ServiceRegistry().serviceWith(name: sharingServiceName) as? SharingService else {
-			fatalError("Programmer error: Service \(sharingServiceName) is not registered with the ServiceRegistry.")
+	var sharingService : SharingService {
+		get {
+			return serviceWith(name: sharingServiceName) as! SharingService
 		}
-		return resolvedService
 	}
 }
 
@@ -27,7 +26,7 @@ protocol SharingService : Service {
 extension SharingService {
 	var serviceName : String { get { return sharingServiceName } }
 
-	internal func share(_ sharable : Any, withActivityItems activityItems : [Any], presentingController : UIViewController) {
+	internal func share(_ sharable : Any, withActivityItems activityItems : [Any] = [], presentingController : UIViewController) {
 		showActivityViewController(with: [sharable] + activityItems, presentingController: presentingController)
 	}
 
@@ -55,19 +54,14 @@ extension SharingService {
 // Production implementation
 internal class SharingServiceImplementation : SharingService {
 	internal static func register() {
-		ServiceRegistry().add(service: self.init())
-	}
-	
-	internal required init() {
+		LazyService(serviceName: sharingServiceName, serviceGetter: { SharingServiceImplementation() }).register()
+
 	}
 }
 
 // Example test implementation
 internal class TestSharingServiceImplementation : SharingService {
 	internal static func register() {
-		ServiceRegistry().add(service: self.init())
-	}
-
-	internal required init() {
+		TestSharingServiceImplementation().register()
 	}
 }

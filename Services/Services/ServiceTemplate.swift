@@ -10,15 +10,26 @@ import Foundation
 
 //** Template for implementing services.  Replace "ServiceTemplate" with the service name.
 
-private struct ServiceTemplateName {
-	static let serviceName = "ServiceTemplate"
-}
+// 1) define a unique name for the service
+private let serviceTemplateName = "ServiceTemplate"
 
 extension ServiceRegistry {
 	var serviceTemplate : ServiceTemplate {
 		get {
-			return serviceWith(name: ServiceTemplateName.serviceName) as! ServiceTemplate	// Intentional force unwrapping
+			return serviceWith(name: serviceTemplateName) as! ServiceTemplate	// Intentional force unwrapping
 		}
+	}
+}
+
+internal class ServiceTemplateImplementation : ServiceTemplate {
+	static func register() {
+		ServiceTemplateImplementation().register()
+	}
+}
+
+internal class LazyServiceTemplateImplementation : ServiceTemplate {
+	static func register() {
+		LazyService(serviceName: serviceTemplateName, serviceGetter: { LazyServiceTemplateImplementation() }).register()
 	}
 }
 
@@ -27,18 +38,8 @@ protocol ServiceTemplate : Service {
 }
 
 extension ServiceTemplate {
-	var serviceName : String {
-		get {
-			return ServiceTemplateName.serviceName
-		}
-	}
+	var serviceName : String { get { return serviceName } }
 
 	func exampleServiceFunction() {
-	}
-}
-
-internal class ServiceTemplateImplementation : ServiceTemplate {
-	static func register() {
-		SR.add(service: ServiceTemplateImplementation())
 	}
 }

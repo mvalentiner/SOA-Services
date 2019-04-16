@@ -18,7 +18,6 @@ class MainViewController: UIViewController {
 			return
 		}
 
-		let sharingService = ServiceRegistry().getSharingService()
-		sharingService.share(textToShare, withActivityItems: [], presentingController: self)
+		SR.sharingService.share(textToShare, presentingController: self)
 	}
 }
