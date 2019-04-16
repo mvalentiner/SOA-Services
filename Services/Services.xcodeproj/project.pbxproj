@@ -14,8 +14,9 @@
 		27E9AAF92029C5540004C6C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E9AAF82029C5540004C6C6 /* Assets.xcassets */; };
 		27E9AAFC2029C5540004C6C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E9AAFA2029C5540004C6C6 /* LaunchScreen.storyboard */; };
 		27E9AB072029C5540004C6C6 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB062029C5540004C6C6 /* ServicesTests.swift */; };
-		27E9AB142029C6A80004C6C6 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB132029C6A80004C6C6 /* ServiceRegistry.swift */; };
 		27E9AB162029C7270004C6C6 /* SharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB152029C7270004C6C6 /* SharingService.swift */; };
+		4C778E7B2265BCF900D682BE /* ServiceTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C778E792265BCF900D682BE /* ServiceTemplate.swift */; };
+		4C778E7C2265BCF900D682BE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C778E7A2265BCF900D682BE /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,9 @@
 		27E9AB022029C5540004C6C6 /* ServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServicesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E9AB062029C5540004C6C6 /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 		27E9AB082029C5540004C6C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27E9AB132029C6A80004C6C6 /* ServiceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistry.swift; sourceTree = "<group>"; };
 		27E9AB152029C7270004C6C6 /* SharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingService.swift; sourceTree = "<group>"; };
+		4C778E792265BCF900D682BE /* ServiceTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTemplate.swift; sourceTree = "<group>"; };
+		4C778E7A2265BCF900D682BE /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,14 +86,15 @@
 			isa = PBXGroup;
 			children = (
 				27E9AAF12029C5540004C6C6 /* AppDelegate.swift */,
-				27E9AAF32029C5540004C6C6 /* MainViewController.swift */,
-				27E9AB132029C6A80004C6C6 /* ServiceRegistry.swift */,
-				27E9AB152029C7270004C6C6 /* SharingService.swift */,
-				27E9AAF52029C5540004C6C6 /* Main.storyboard */,
 				27E9AAF82029C5540004C6C6 /* Assets.xcassets */,
-				27E9AAFA2029C5540004C6C6 /* LaunchScreen.storyboard */,
 				27E9AAFD2029C5540004C6C6 /* Info.plist */,
+				27E9AAFA2029C5540004C6C6 /* LaunchScreen.storyboard */,
+				27E9AAF52029C5540004C6C6 /* Main.storyboard */,
+				27E9AAF32029C5540004C6C6 /* MainViewController.swift */,
 				2724D15820407EA80079A7E8 /* README.md */,
+				4C778E7A2265BCF900D682BE /* Service.swift */,
+				4C778E792265BCF900D682BE /* ServiceTemplate.swift */,
+				27E9AB152029C7270004C6C6 /* SharingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -150,15 +153,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Heliotropix;
 				TargetAttributes = {
 					27E9AAED2029C5540004C6C6 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					27E9AB012029C5540004C6C6 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 27E9AAED2029C5540004C6C6;
 					};
@@ -210,8 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E9AAF42029C5540004C6C6 /* MainViewController.swift in Sources */,
+				4C778E7B2265BCF900D682BE /* ServiceTemplate.swift in Sources */,
+				4C778E7C2265BCF900D682BE /* Service.swift in Sources */,
 				27E9AAF22029C5540004C6C6 /* AppDelegate.swift in Sources */,
-				27E9AB142029C6A80004C6C6 /* ServiceRegistry.swift in Sources */,
 				27E9AB162029C7270004C6C6 /* SharingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +274,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -275,6 +282,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -325,6 +333,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -332,6 +341,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -371,7 +381,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heliotropix.Services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -386,7 +396,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heliotropix.Services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -402,7 +412,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heliotropix.ServicesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Services.app/Services";
 			};
@@ -419,7 +429,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heliotropix.ServicesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Services.app/Services";
 			};

@@ -8,19 +8,6 @@
 
 import UIKit
 
-struct SharableText : Sharable {
-
-    let text : String
-
-	init(_ textToShare : String) {
-		text = textToShare
-	}
-
-	var content : Any {
-		get { return text }
-	}
-}
-
 class MainViewController: UIViewController {
 
 	@IBOutlet weak var textField: UITextField!
@@ -32,7 +19,6 @@ class MainViewController: UIViewController {
 		}
 
 		let sharingService = ServiceRegistry().getSharingService()
-		let sharableText = SharableText(textToShare)
-		sharingService.share(sharableText, withActivityItems: [], presentingController: self)
+		sharingService.share(textToShare, withActivityItems: [], presentingController: self)
 	}
 }

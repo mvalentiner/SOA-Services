@@ -13,66 +13,61 @@ private let sharingServiceName = "SharingService"
 
 extension ServiceRegistry {
 	func getSharingService() -> SharingService {
-		guard let resolvedService = ServiceRegistry().getService(withName: sharingServiceName) as? SharingService else {
+		guard let resolvedService = ServiceRegistry().serviceWith(name: sharingServiceName) as? SharingService else {
 			fatalError("Programmer error: Service \(sharingServiceName) is not registered with the ServiceRegistry.")
 		}
 		return resolvedService
 	}
 }
 
-protocol Sharable {
-	var content : Any { get }
-}
-
 protocol SharingService : Service {
-	func share(_ content : Sharable, withActivityItems activityItems : [Any], presentingController : UIViewController)
+	func share(_ content : Any, withActivityItems activityItems : [Any], presentingController : UIViewController)
 }
 
 extension SharingService {
-	internal func share(_ sharable : Sharable, withActivityItems activityItems : [Any], presentingController : UIViewController) {
-		showActivityViewController(with: [sharable.content] + activityItems, presentingController: presentingController)
+	var serviceName : String { get { return sharingServiceName } }
+
+	internal func share(_ sharable : Any, withActivityItems activityItems : [Any], presentingController : UIViewController) {
+		showActivityViewController(with: [sharable] + activityItems, presentingController: presentingController)
 	}
 
 	private func showActivityViewController(with activityItems: [Any], presentingController : UIViewController) {
 		let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
 		var excludedActivityTypes = [
-			UIActivityType.postToWeibo,
-			UIActivityType.print,
-			UIActivityType.assignToContact,
-			UIActivityType.saveToCameraRoll,
-			UIActivityType.addToReadingList,
-			UIActivityType.postToVimeo,
-			UIActivityType.postToTencentWeibo,
-			UIActivityType.airDrop,
-			UIActivityType.openInIBooks
+			UIActivity.ActivityType.postToWeibo,
+			UIActivity.ActivityType.print,
+			UIActivity.ActivityType.assignToContact,
+			UIActivity.ActivityType.saveToCameraRoll,
+			UIActivity.ActivityType.addToReadingList,
+			UIActivity.ActivityType.postToVimeo,
+			UIActivity.ActivityType.postToTencentWeibo,
+			UIActivity.ActivityType.airDrop,
+			UIActivity.ActivityType.openInIBooks
 		]
 		if #available(iOS 11.0, *) {
-			excludedActivityTypes = excludedActivityTypes + [UIActivityType.markupAsPDF]
+			excludedActivityTypes = excludedActivityTypes + [UIActivity.ActivityType.markupAsPDF]
 		}
 		activityViewController.excludedActivityTypes = excludedActivityTypes
-//		activityViewController.completionWithItemsHandler = {
-//			activityType, wasCompleted, items, error in
-//		}
 		presentingController.present(activityViewController, animated: true)
     }
 }
 
 // Production implementation
-internal struct SharingServiceImplementation : SharingService {
-	static func register() {
-		ServiceRegistry().addService(self.init(), withName: sharingServiceName)
+internal class SharingServiceImplementation : SharingService {
+	internal static func register() {
+		ServiceRegistry().add(service: self.init())
 	}
 	
-	private init() {
+	internal required init() {
 	}
 }
 
 // Example test implementation
-internal struct TestSharingServiceImplementation : SharingService {
-	static func register() {
-		ServiceRegistry().addService(self.init(), withName: sharingServiceName)
+internal class TestSharingServiceImplementation : SharingService {
+	internal static func register() {
+		ServiceRegistry().add(service: self.init())
 	}
 
-	private init() {
+	internal required init() {
 	}
 }
