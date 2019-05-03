@@ -16,7 +16,7 @@
 		27E9AB072029C5540004C6C6 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB062029C5540004C6C6 /* ServicesTests.swift */; };
 		27E9AB162029C7270004C6C6 /* SharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB152029C7270004C6C6 /* SharingService.swift */; };
 		4C778E7B2265BCF900D682BE /* ServiceTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C778E792265BCF900D682BE /* ServiceTemplate.swift */; };
-		4C778E7C2265BCF900D682BE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C778E7A2265BCF900D682BE /* Service.swift */; };
+		4C778E7C2265BCF900D682BE /* SOAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C778E7A2265BCF900D682BE /* SOAService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		27E9AB082029C5540004C6C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E9AB152029C7270004C6C6 /* SharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingService.swift; sourceTree = "<group>"; };
 		4C778E792265BCF900D682BE /* ServiceTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTemplate.swift; sourceTree = "<group>"; };
-		4C778E7A2265BCF900D682BE /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		4C778E7A2265BCF900D682BE /* SOAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOAService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 				27E9AAF52029C5540004C6C6 /* Main.storyboard */,
 				27E9AAF32029C5540004C6C6 /* MainViewController.swift */,
 				2724D15820407EA80079A7E8 /* README.md */,
-				4C778E7A2265BCF900D682BE /* Service.swift */,
+				4C778E7A2265BCF900D682BE /* SOAService.swift */,
 				4C778E792265BCF900D682BE /* ServiceTemplate.swift */,
 				27E9AB152029C7270004C6C6 /* SharingService.swift */,
 			);
@@ -216,7 +216,7 @@
 			files = (
 				27E9AAF42029C5540004C6C6 /* MainViewController.swift in Sources */,
 				4C778E7B2265BCF900D682BE /* ServiceTemplate.swift in Sources */,
-				4C778E7C2265BCF900D682BE /* Service.swift in Sources */,
+				4C778E7C2265BCF900D682BE /* SOAService.swift in Sources */,
 				27E9AAF22029C5540004C6C6 /* AppDelegate.swift in Sources */,
 				27E9AB162029C7270004C6C6 /* SharingService.swift in Sources */,
 			);

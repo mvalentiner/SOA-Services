@@ -8,38 +8,43 @@
 
 import Foundation
 
-//** Template for implementing services.  Replace "ServiceTemplate" with the service name.
+/// Template for implementing services.  Replace "ServiceTemplate" with the service name.
 
-// 1) define a unique name for the service
-private let serviceTemplateName = "ServiceTemplate"
+private struct ServiceTemplateName {
+	static let serviceName = "ServiceTemplate"
+}
 
-extension ServiceRegistry {
+extension ServiceRegistryImplementation {
 	var serviceTemplate : ServiceTemplate {
 		get {
-			return serviceWith(name: serviceTemplateName) as! ServiceTemplate	// Intentional force unwrapping
+			return serviceWith(name: ServiceTemplateName.serviceName) as! ServiceTemplate	// Intentional force unwrapping
 		}
 	}
 }
 
-internal class ServiceTemplateImplementation : ServiceTemplate {
-	static func register() {
-		ServiceTemplateImplementation().register()
-	}
-}
-
-internal class LazyServiceTemplateImplementation : ServiceTemplate {
-	static func register() {
-		LazyService(serviceName: serviceTemplateName, serviceGetter: { LazyServiceTemplateImplementation() }).register()
-	}
-}
-
-protocol ServiceTemplate : Service {
+protocol ServiceTemplate : SOAService {
 	func exampleServiceFunction()
 }
 
 extension ServiceTemplate {
-	var serviceName : String { get { return serviceName } }
+	var serviceName : String {
+		get {
+			return ServiceTemplateName.serviceName
+		}
+	}
 
 	func exampleServiceFunction() {
 	}
+}
+
+internal class ServiceTemplateImplementation : ServiceTemplate {
+	// Only define one register function.
+	static func register() {
+		ServiceTemplateImplementation().register()
+	}
+
+	// Register the service as a lazy service.
+//	static func register() {
+//		ServiceRegistry.add(service: SOALazyService(serviceName: ServiceTemplateName.serviceName, serviceGetter: { ServiceTemplateImplementation() }))
+//	}
 }

@@ -11,7 +11,7 @@ import UIKit
 
 private let sharingServiceName = "SharingService"
 
-extension ServiceRegistry {
+extension ServiceRegistryImplementation {
 	var sharingService : SharingService {
 		get {
 			return serviceWith(name: sharingServiceName) as! SharingService
@@ -19,7 +19,7 @@ extension ServiceRegistry {
 	}
 }
 
-protocol SharingService : Service {
+protocol SharingService : SOAService {
 	func share(_ content : Any, withActivityItems activityItems : [Any], presentingController : UIViewController)
 }
 
