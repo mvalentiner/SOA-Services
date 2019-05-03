@@ -54,8 +54,7 @@ extension SharingService {
 // Production implementation
 internal class SharingServiceImplementation : SharingService {
 	internal static func register() {
-		LazyService(serviceName: sharingServiceName, serviceGetter: { SharingServiceImplementation() }).register()
-
+		ServiceRegistry.add(service: SOALazyService(serviceName: sharingServiceName) { SharingServiceImplementation() })
 	}
 }
 

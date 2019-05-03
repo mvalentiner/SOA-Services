@@ -13,11 +13,13 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var textField: UITextField!
 	@IBOutlet weak var shareTextButton: UIButton!
 
+	// "Inject" service here.
+	let sharingService = ServiceRegistry.sharingService
+
 	@IBAction func handleShareTextButtonTap(_ sender: Any) {
 		guard let textToShare = textField.text else {
 			return
 		}
-
-		SR.sharingService.share(textToShare, presentingController: self)
+		self.sharingService.share(textToShare, presentingController: self)
 	}
 }

@@ -11,13 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+	// Even though serviceRegistry is not referenced in this file, this declaration causes ServiceRegistry to be instantiated
+	// and services to be registered prior to application(_ application:, didFinishLaunchingWithOptions:) being called.
+	private let serviceRegistry : ServiceRegistryImplementation = {
+		SharingServiceImplementation.register()
+		return ServiceRegistry
+	}()
+
 	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-		// Instantitate and register our services
-		SharingServiceImplementation.register()
-		
 		return true
 	}
 
@@ -42,7 +45,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
-
-
 }
 
