@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2724D15920407EA80079A7E8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2724D15820407EA80079A7E8 /* README.md */; };
 		27E9AAF22029C5540004C6C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AAF12029C5540004C6C6 /* AppDelegate.swift */; };
 		27E9AAF42029C5540004C6C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AAF32029C5540004C6C6 /* MainViewController.swift */; };
 		27E9AAF72029C5540004C6C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E9AAF52029C5540004C6C6 /* Main.storyboard */; };
@@ -15,6 +14,7 @@
 		27E9AAFC2029C5540004C6C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E9AAFA2029C5540004C6C6 /* LaunchScreen.storyboard */; };
 		27E9AB072029C5540004C6C6 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB062029C5540004C6C6 /* ServicesTests.swift */; };
 		27E9AB162029C7270004C6C6 /* SharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9AB152029C7270004C6C6 /* SharingService.swift */; };
+		4C579325228AFE15009D838F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4C579324228AFE15009D838F /* README.md */; };
 		4C778E7B2265BCF900D682BE /* ServiceTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C778E792265BCF900D682BE /* ServiceTemplate.swift */; };
 		4C778E7C2265BCF900D682BE /* SOAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C778E7A2265BCF900D682BE /* SOAService.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2724D15820407EA80079A7E8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Services/README.md; sourceTree = SOURCE_ROOT; wrapsLines = 1; };
 		27E9AAEE2029C5540004C6C6 /* Services.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Services.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E9AAF12029C5540004C6C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E9AAF32029C5540004C6C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		27E9AB062029C5540004C6C6 /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
 		27E9AB082029C5540004C6C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E9AB152029C7270004C6C6 /* SharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingService.swift; sourceTree = "<group>"; };
+		4C579324228AFE15009D838F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4C778E792265BCF900D682BE /* ServiceTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTemplate.swift; sourceTree = "<group>"; };
 		4C778E7A2265BCF900D682BE /* SOAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOAService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +67,7 @@
 		27E9AAE52029C5540004C6C6 = {
 			isa = PBXGroup;
 			children = (
+				4C579324228AFE15009D838F /* README.md */,
 				27E9AAF02029C5540004C6C6 /* Services */,
 				27E9AB052029C5540004C6C6 /* ServicesTests */,
 				27E9AAEF2029C5540004C6C6 /* Products */,
@@ -91,7 +92,6 @@
 				27E9AAFA2029C5540004C6C6 /* LaunchScreen.storyboard */,
 				27E9AAF52029C5540004C6C6 /* Main.storyboard */,
 				27E9AAF32029C5540004C6C6 /* MainViewController.swift */,
-				2724D15820407EA80079A7E8 /* README.md */,
 				4C778E7A2265BCF900D682BE /* SOAService.swift */,
 				4C778E792265BCF900D682BE /* ServiceTemplate.swift */,
 				27E9AB152029C7270004C6C6 /* SharingService.swift */,
@@ -195,7 +195,7 @@
 			files = (
 				27E9AAFC2029C5540004C6C6 /* LaunchScreen.storyboard in Resources */,
 				27E9AAF92029C5540004C6C6 /* Assets.xcassets in Resources */,
-				2724D15920407EA80079A7E8 /* README.md in Resources */,
+				4C579325228AFE15009D838F /* README.md in Resources */,
 				27E9AAF72029C5540004C6C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
