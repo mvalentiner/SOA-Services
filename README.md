@@ -1,7 +1,14 @@
 # Swift Service Oriented Architecture
 
-Service Oriented Architecture (SOA) is a software pattern that consolidates functionality and business logic implementation into services within the application. By building around services, we can move business logic implementation out of our UIViewControllers thereby reducing their complexity.
-Utilizing dependency injection, we can configure and instantiate our services independent of their point use. By injecting services into our UIViewControllers, we allievate them from needing to know the details of how to access a service, how to construct a service, and how to satisfy a service's dependencies.
+Service Oriented Architecture (SOA) is a software pattern that consolidates functionality and business logic implementation into services within the application.
+
+By building around services, we can move business logic implementation out of our UIViewControllers thereby reducing their complexity.
+
+Utilizing dependency injection, we can configure and instantiate our services independent of their point use.
+
+By injecting services into our UIViewControllers, we allievate them from needing to know the details of how to access a service, how to construct a service, and how to satisfy a service's dependencies.
+
+Services give us the means to achieve Separation of Concerns, https://en.wikipedia.org/wiki/Separation_of_concerns.
 
 ### What is a Service?
 In SOA, a service is anything that inherits from the `SOAService` protocol. It can be thought of, but not restricted to, as a concrete component with an abstract functional interface. For example,
